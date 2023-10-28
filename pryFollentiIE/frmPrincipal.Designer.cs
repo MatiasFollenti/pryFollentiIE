@@ -34,10 +34,10 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pctUsuarios = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pctLogs = new System.Windows.Forms.PictureBox();
+            this.pctSocios = new System.Windows.Forms.PictureBox();
             this.barraDeEstado = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,8 +57,8 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSocios)).BeginInit();
             this.barraDeEstado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEliminar)).BeginInit();
@@ -85,10 +85,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.label5);
+            this.splitContainer1.Panel2.Controls.Add(this.pctUsuarios);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
-            this.splitContainer1.Panel2.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.pctLogs);
+            this.splitContainer1.Panel2.Controls.Add(this.pctSocios);
             this.splitContainer1.Panel2.Controls.Add(this.barraDeEstado);
             this.splitContainer1.Panel2.Controls.Add(this.label4);
             this.splitContainer1.Panel2.Controls.Add(this.label3);
@@ -99,7 +99,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.pctEditar);
             this.splitContainer1.Panel2.Controls.Add(this.pctAgregar);
             this.splitContainer1.Panel2.Font = new System.Drawing.Font("OCR A Extended", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.splitContainer1.Size = new System.Drawing.Size(903, 485);
+            this.splitContainer1.Size = new System.Drawing.Size(1097, 485);
             this.splitContainer1.SplitterDistance = 246;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -133,47 +133,49 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(498, 396);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 15);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "ABM usuarios";
+            // 
+            // pctUsuarios
+            // 
+            this.pctUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctUsuarios.Image = global::pryFollentiIE.Properties.Resources.newUser;
+            this.pctUsuarios.Location = new System.Drawing.Point(455, 236);
+            this.pctUsuarios.Name = "pctUsuarios";
+            this.pctUsuarios.Size = new System.Drawing.Size(162, 157);
+            this.pctUsuarios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctUsuarios.TabIndex = 22;
+            this.pctUsuarios.TabStop = false;
+            this.pctUsuarios.Click += new System.EventHandler(this.pctUsuarios_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(510, 197);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(50, 15);
+            this.label8.Size = new System.Drawing.Size(83, 15);
             this.label8.TabIndex = 21;
-            this.label8.Text = "Socios";
+            this.label8.Text = "ABM Socios";
             // 
-            // pictureBox1
+            // pctSocios
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::pryFollentiIE.Properties.Resources.equipo;
-            this.pictureBox1.Location = new System.Drawing.Point(455, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(162, 157);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 18;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(477, 396);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 15);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Registros de Logs";
-            // 
-            // pctLogs
-            // 
-            this.pctLogs.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctLogs.Image = global::pryFollentiIE.Properties.Resources.logs;
-            this.pctLogs.Location = new System.Drawing.Point(457, 236);
-            this.pctLogs.Name = "pctLogs";
-            this.pctLogs.Size = new System.Drawing.Size(162, 157);
-            this.pctLogs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctLogs.TabIndex = 16;
-            this.pctLogs.TabStop = false;
+            this.pctSocios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctSocios.Image = global::pryFollentiIE.Properties.Resources.equipo;
+            this.pctSocios.Location = new System.Drawing.Point(455, 33);
+            this.pctSocios.Name = "pctSocios";
+            this.pctSocios.Size = new System.Drawing.Size(162, 157);
+            this.pctSocios.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctSocios.TabIndex = 18;
+            this.pctSocios.TabStop = false;
+            this.pctSocios.Click += new System.EventHandler(this.pctSocios_Click);
             // 
             // barraDeEstado
             // 
@@ -181,7 +183,7 @@
             this.lblStatus});
             this.barraDeEstado.Location = new System.Drawing.Point(0, 463);
             this.barraDeEstado.Name = "barraDeEstado";
-            this.barraDeEstado.Size = new System.Drawing.Size(653, 22);
+            this.barraDeEstado.Size = new System.Drawing.Size(847, 22);
             this.barraDeEstado.TabIndex = 13;
             this.barraDeEstado.Text = "statusStrip1";
             // 
@@ -197,9 +199,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(294, 396);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 15);
+            this.label4.Size = new System.Drawing.Size(101, 15);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Buscar";
+            this.label4.Text = "Buscar archivo";
             // 
             // label3
             // 
@@ -207,19 +209,19 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(97, 396);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 15);
+            this.label3.Size = new System.Drawing.Size(111, 15);
             this.label3.TabIndex = 11;
-            this.label3.Text = "Eliminar";
+            this.label3.Text = "Eliminar archivo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(319, 197);
+            this.label2.Location = new System.Drawing.Point(256, 197);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.Size = new System.Drawing.Size(182, 15);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Editar";
+            this.label2.Text = "Editar registros de archivos";
             // 
             // label1
             // 
@@ -227,9 +229,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(97, 197);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.Size = new System.Drawing.Size(107, 15);
             this.label1.TabIndex = 9;
-            this.label1.Text = "Agregar";
+            this.label1.Text = "Agregar archivo";
             // 
             // pctBuscar
             // 
@@ -287,7 +289,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(903, 34);
+            this.panel1.Size = new System.Drawing.Size(1097, 34);
             this.panel1.TabIndex = 8;
             // 
             // btnMinimizarApp
@@ -295,7 +297,7 @@
             this.btnMinimizarApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.btnMinimizarApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarApp.Image = global::pryFollentiIE.Properties.Resources.minimizar_ventana;
-            this.btnMinimizarApp.Location = new System.Drawing.Point(831, 4);
+            this.btnMinimizarApp.Location = new System.Drawing.Point(1026, 5);
             this.btnMinimizarApp.Name = "btnMinimizarApp";
             this.btnMinimizarApp.Size = new System.Drawing.Size(24, 23);
             this.btnMinimizarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -308,7 +310,7 @@
             this.btnCerrarApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.btnCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarApp.Image = global::pryFollentiIE.Properties.Resources.cerrar__1_;
-            this.btnCerrarApp.Location = new System.Drawing.Point(861, 4);
+            this.btnCerrarApp.Location = new System.Drawing.Point(1056, 5);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(30, 24);
             this.btnCerrarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -325,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 519);
+            this.ClientSize = new System.Drawing.Size(1097, 519);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -341,8 +343,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSocios)).EndInit();
             this.barraDeEstado.ResumeLayout(false);
             this.barraDeEstado.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBuscar)).EndInit();
@@ -371,13 +373,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.StatusStrip barraDeEstado;
-        private System.Windows.Forms.PictureBox pctLogs;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Timer timerHora;
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pctSocios;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pctUsuarios;
     }
 }

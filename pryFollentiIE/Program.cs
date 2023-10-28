@@ -16,7 +16,7 @@ namespace pryFollentiIE
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new abmSocios());
+            Application.Run(new frmUsuarios());
         }
     }
 }

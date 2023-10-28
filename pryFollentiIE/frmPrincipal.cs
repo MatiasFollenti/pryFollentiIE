@@ -84,7 +84,19 @@ namespace pryFollentiIE
             lblStatus.ForeColor = Color.White;
         }
 
-       
+        private void pctSocios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmABMSocios abmSocios = new frmABMSocios();
+            abmSocios.Show();
+        }
+
+        private void pctUsuarios_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmUsuarios frmUsuarios = new frmUsuarios();
+            frmUsuarios.Show();
+        }
     }
 
    
