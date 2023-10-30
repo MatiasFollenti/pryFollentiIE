@@ -23,6 +23,7 @@ namespace pryFollentiIE
             InitializeComponent();
             KeyPreview = true;
             this.KeyDown += CerrarFrm_KeyDown;
+            objUsuario = new Usuario();
         }
 
         public static void CerrarFrm_KeyDown(object sender, KeyEventArgs e)
@@ -53,14 +54,13 @@ namespace pryFollentiIE
             txtContraseña.UseSystemPasswordChar = true;
         }
       
-        
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             varUserIng = txtUsuario.Text;
             varPasswordIng = txtContraseña.Text;
-            Usuario objUsuario = new Usuario();
+            
             objUsuario.ConectarBD();
-            objUsuario.traerDatosParaLogin(varUserIng,varPasswordIng,this);
+            objUsuario.ValidarUsuario(varUserIng,varPasswordIng,this);
             
 
         }

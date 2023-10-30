@@ -22,6 +22,12 @@ namespace pryFollentiIE
 
         public string estadoDeConexion = "";
         public string datosTabla = "";
+        int varContador;
+        public AccesoDatos()
+        {
+             varContador = 0;
+        }
+
 
         public void ConectarBD()
         {
@@ -69,10 +75,11 @@ namespace pryFollentiIE
         }
 
 
-        private int varContador = 0;
-        public void traerDatosParaLogin(string varNombre, string varContraseña, Form frm)
+        
+        public void ValidarUsuario(string varNombre, string varContraseña, Form frm)
         {
-            comandoBD = new OleDbCommand();
+            
+         comandoBD = new OleDbCommand();
             int intentosMaximos = 3;
             bool usuarioEncontrado = false;
 
@@ -110,7 +117,6 @@ namespace pryFollentiIE
                 }
             }
         }
-
 
 
         /* public void traerDatosParaLogin(string varNombre, string varContraseña, Form frm)
@@ -159,7 +165,7 @@ namespace pryFollentiIE
              }
 
          } */
-        
+
         public void BuscarPorId(string codigo, DataGridView dgvMostrar )
         {
             comandoBD = new OleDbCommand();

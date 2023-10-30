@@ -20,7 +20,7 @@ namespace pryFollentiIE
         }
 
         AccesoDatos objBD;
-        int varID;
+       
 
 
         public static void CerrarFrm_KeyDown(object sender, KeyEventArgs e)

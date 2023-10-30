@@ -64,7 +64,7 @@
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(154, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 21);
+            this.label1.Size = new System.Drawing.Size(60, 19);
             this.label1.TabIndex = 8;
             this.label1.Text = "LOGIN";
             // 
@@ -108,7 +108,7 @@
             this.lblUsuario.ForeColor = System.Drawing.Color.Silver;
             this.lblUsuario.Location = new System.Drawing.Point(42, 107);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(86, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(82, 19);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "USUARIO:";
             // 
@@ -144,7 +144,7 @@
             this.lblContra.ForeColor = System.Drawing.Color.Silver;
             this.lblContra.Location = new System.Drawing.Point(42, 186);
             this.lblContra.Name = "lblContra";
-            this.lblContra.Size = new System.Drawing.Size(126, 21);
+            this.lblContra.Size = new System.Drawing.Size(122, 19);
             this.lblContra.TabIndex = 4;
             this.lblContra.Text = "CONTRASEÑA:";
             // 
@@ -196,7 +196,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLogin";
-            this.Opacity = 0.85D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);

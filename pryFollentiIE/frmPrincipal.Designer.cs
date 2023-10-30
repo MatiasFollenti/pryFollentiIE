@@ -52,6 +52,7 @@
             this.btnMinimizarApp = new System.Windows.Forms.PictureBox();
             this.btnCerrarApp = new System.Windows.Forms.PictureBox();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
+            this.lblUsuarioTS = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -180,7 +181,8 @@
             // barraDeEstado
             // 
             this.barraDeEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus});
+            this.lblStatus,
+            this.lblUsuarioTS});
             this.barraDeEstado.Location = new System.Drawing.Point(0, 463);
             this.barraDeEstado.Name = "barraDeEstado";
             this.barraDeEstado.Size = new System.Drawing.Size(847, 22);
@@ -323,6 +325,12 @@
             this.timerHora.Enabled = true;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
+            // lblUsuarioTS
+            // 
+            this.lblUsuarioTS.Name = "lblUsuarioTS";
+            this.lblUsuarioTS.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuarioTS.Size = new System.Drawing.Size(0, 17);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,5 +389,6 @@
         private System.Windows.Forms.PictureBox pctSocios;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pctUsuarios;
+        private System.Windows.Forms.ToolStripStatusLabel lblUsuarioTS;
     }
 }
