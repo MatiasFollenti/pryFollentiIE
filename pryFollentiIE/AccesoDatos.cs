@@ -1,6 +1,7 @@
 ﻿using pryFollentiIE;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.OleDb;
 using System.Linq;
 using System.Text;
@@ -59,9 +60,11 @@ namespace pryFollentiIE
             grilla.Columns.Add("Apellido", "Apellido");
             grilla.Columns.Add("Pais", "Pais");
             grilla.Columns.Add("Edad", "Edad");
+            grilla.Columns.Add("Sexo", "Sexo");
             grilla.Columns.Add("Ingreso", "Ingreso");
             grilla.Columns.Add("Puntaje", "Puntaje");
-            
+            grilla.Columns.Add("Estado", "Estado");
+
 
 
             if (lectorBD.HasRows)
@@ -69,7 +72,7 @@ namespace pryFollentiIE
                 while (lectorBD.Read())
                 {
                     datosTabla += "-" + lectorBD[0];
-                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6]);
+                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], lectorBD[8]);
                 }
             }
         }
@@ -197,7 +200,7 @@ namespace pryFollentiIE
                         {
 
                             dgvMostrar.Rows.Clear();
-                            dgvMostrar.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7]);
+                            dgvMostrar.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7], lectorBD[8]);
                             bandera = true;
                             break;
                         }
@@ -215,8 +218,79 @@ namespace pryFollentiIE
             }
         }
 
+        public void ModificarEstado(int id) 
+        {
+            
+            OleDbCommand comandoBD = new OleDbCommand();
+
+            OleDbDataAdapter objda;
+            DataSet objds = new DataSet();// objeto DataSetas usar
+
+            try
+            {
+                conexionBD = new OleDbConnection();
+                conexionBD.ConnectionString = cadenaDeConexion;
+                conexionBD.Open();
+                estadoDeConexion = "Conectado";
+                // comandoBD.Connection = conexionBD;
+            }
+            catch (Exception ex)
+            {
+                estadoDeConexion = "Error" + ex.Message;
+            }
+
+            // establecer las propiedades al objeto comando
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = CommandType.TableDirect;
+            comandoBD.CommandText = "SOCIOS";
+
+            // crear el objeto DataAdapter pasando como parámetroel objeto comando que queremos vincular
+            objda = new OleDbDataAdapter(comandoBD);
+
+            // ejecutar la lectura de la tabla y almacenarsu contenido en el dataAdapter
+
+            objda.Fill(objds, "SOCIOS");
 
 
+            // obtenemos una referencia a la tabla de SOCIOS
+            DataTable dt = objds.Tables["SOCIOS"]; 
+
+            // recorrer los registros de la tabla
+
+            foreach(DataRow registro in dt.Rows) 
+            { // buscar el Socio con el ID ingresado por pantalla
+              
+               if((int) registro["CODIGO_SOCIO"] == id) 
+                {
+              // establecer el modo de edición del DataRow
+                registro.BeginEdit();
+
+                    // asignamos el nuevo valor al estado del socio 
+                    if ((bool)registro["ESTADO"]) 
+                    {
+                        registro["ESTADO"] = false;
+                    }
+                    else
+                    {
+                        registro["ESTADO"] = true;
+                    }
+
+                    // finalizamos el modo edición sobre delDataRow
+                    registro.EndEdit();
+                break;// salir del foreach
+                }
+
+
+            }
+            // creamos el objeto OledBCommandBuilder pasando como parámetro el DataAdapter
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(objda);
+
+            // actualizamos la base con los cambios realizados
+
+            objda.Update(objds, "SOCIOS");
+
+            MessageBox.Show("Estado cambiado con éxito!!");
+        }
     }
 }
 

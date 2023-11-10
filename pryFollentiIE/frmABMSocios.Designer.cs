@@ -36,16 +36,19 @@
             this.btnBuscarId = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvMostrar = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.PictureBox();
+            this.dgvMostrar = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnCambiarEstado = new System.Windows.Forms.Button();
+            this.txtIdEstado = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizarApp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrarApp)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -87,6 +90,9 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnCambiarEstado);
+            this.panel2.Controls.Add(this.txtIdEstado);
             this.panel2.Controls.Add(this.lblbusq);
             this.panel2.Controls.Add(this.btnBuscarId);
             this.panel2.Controls.Add(this.txtID);
@@ -141,17 +147,6 @@
             this.panel3.Size = new System.Drawing.Size(854, 645);
             this.panel3.TabIndex = 11;
             // 
-            // dgvMostrar
-            // 
-            this.dgvMostrar.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMostrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dgvMostrar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgvMostrar.Location = new System.Drawing.Point(0, 0);
-            this.dgvMostrar.Name = "dgvMostrar";
-            this.dgvMostrar.Size = new System.Drawing.Size(854, 574);
-            this.dgvMostrar.TabIndex = 0;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -176,7 +171,52 @@
             this.btnVolver.TabStop = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // abmSocios
+            // dgvMostrar
+            // 
+            this.dgvMostrar.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvMostrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMostrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgvMostrar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgvMostrar.Location = new System.Drawing.Point(0, 0);
+            this.dgvMostrar.Name = "dgvMostrar";
+            this.dgvMostrar.Size = new System.Drawing.Size(854, 574);
+            this.dgvMostrar.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 262);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(198, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Ingrese el ID que desea modificar";
+            // 
+            // btnCambiarEstado
+            // 
+            this.btnCambiarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(97)))), ((int)(((byte)(208)))));
+            this.btnCambiarEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarEstado.FlatAppearance.BorderSize = 0;
+            this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarEstado.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarEstado.ForeColor = System.Drawing.SystemColors.Window;
+            this.btnCambiarEstado.Location = new System.Drawing.Point(36, 348);
+            this.btnCambiarEstado.Name = "btnCambiarEstado";
+            this.btnCambiarEstado.Size = new System.Drawing.Size(147, 35);
+            this.btnCambiarEstado.TabIndex = 10;
+            this.btnCambiarEstado.Text = "Cambiar Estado";
+            this.btnCambiarEstado.UseVisualStyleBackColor = false;
+            this.btnCambiarEstado.Click += new System.EventHandler(this.btnCambiarEstado_Click);
+            // 
+            // txtIdEstado
+            // 
+            this.txtIdEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdEstado.Location = new System.Drawing.Point(57, 296);
+            this.txtIdEstado.Name = "txtIdEstado";
+            this.txtIdEstado.Size = new System.Drawing.Size(100, 23);
+            this.txtIdEstado.TabIndex = 9;
+            // 
+            // frmABMSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -185,7 +225,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "abmSocios";
+            this.Name = "frmABMSocios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "abmSocios";
             this.Load += new System.EventHandler(this.abmSocios_Load);
@@ -196,8 +236,8 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnVolver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMostrar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +255,8 @@
         private System.Windows.Forms.Button btnBuscarId;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnVolver;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnCambiarEstado;
+        private System.Windows.Forms.TextBox txtIdEstado;
     }
 }

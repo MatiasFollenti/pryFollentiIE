@@ -25,6 +25,7 @@ namespace pryFollentiIE
 
         string varNombre;
         string varCategoria;
+        int varID;
 
         public static void CerrarFrm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -61,6 +62,12 @@ namespace pryFollentiIE
             frmPrincipal frmPrincipal = new frmPrincipal(varNombre, varCategoria);
             this.Hide();
             frmPrincipal.Show();
+        }
+
+        private void btnCambiarEstado_Click(object sender, EventArgs e)
+        {
+            varID = Convert.ToInt32(txtIdEstado.Text);
+            objBD.ModificarEstado(varID);
         }
     }
 
