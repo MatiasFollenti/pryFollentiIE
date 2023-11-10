@@ -15,9 +15,13 @@ namespace pryFollentiIE
 {
     public partial class frmEliminar : Form
     {
-        public frmEliminar()
+        string varNombre;
+        string varCategoria;
+        public frmEliminar(string noTenes7L, string jfKennedy)
         {
             InitializeComponent();
+            varNombre = noTenes7L;
+            varCategoria = jfKennedy;
             KeyPreview = true;
             this.KeyDown += CerrarFrm_KeyDown;
         }
@@ -37,7 +41,7 @@ namespace pryFollentiIE
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal(varNombre, varCategoria);
             this.Hide();
             frmPrincipal.Show();
         }

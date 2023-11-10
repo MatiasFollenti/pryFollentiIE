@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsLog.cs" />
     <Compile Include="frmABMSocios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,7 +117,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="proveedor.cs" />
-    <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="frmABMSocios.resx">
       <DependentUpon>frmABMSocios.cs</DependentUpon>
     </EmbeddedResource>

@@ -15,7 +15,7 @@ namespace pryFollentiIE
         OleDbConnection conexionBD;
         OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
-      
+        public string varNom;
         
         
         string cadenaDeConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
@@ -76,7 +76,7 @@ namespace pryFollentiIE
 
 
         
-        public void ValidarUsuario(string varNombre, string varContraseña, Form frm)
+        public void ValidarUsuario( string varNombre, string varContraseña, Form frm)
         {
             
          comandoBD = new OleDbCommand();
@@ -93,13 +93,17 @@ namespace pryFollentiIE
             {
                 string nombreDB = lectorBD[1].ToString();
                 string contraseñaDB = lectorBD[2].ToString();
+                
 
                 if (nombreDB == varNombre && contraseñaDB == varContraseña)
                 {
+                    string varCat = lectorBD[3].ToString();
+
+                    varNom = varNombre;
                     MessageBox.Show("Datos correctos");
                     frm.Hide();
-                    frmPrincipal frmPrincipal = new frmPrincipal();
-                    frmPrincipal.Show();
+                    frmInicio frmInicio = new frmInicio(varNombre, varCat);
+                    frmInicio.Show();
                     usuarioEncontrado = true;
                     break;
                 }

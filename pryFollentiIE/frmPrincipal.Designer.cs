@@ -34,12 +34,13 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblABMUs = new System.Windows.Forms.Label();
             this.pctUsuarios = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
             this.pctSocios = new System.Windows.Forms.PictureBox();
             this.barraDeEstado = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblUsuarioTS = new System.Windows.Forms.ToolStripStatusLabel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.btnMinimizarApp = new System.Windows.Forms.PictureBox();
             this.btnCerrarApp = new System.Windows.Forms.PictureBox();
             this.timerHora = new System.Windows.Forms.Timer(this.components);
-            this.lblUsuarioTS = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -86,7 +86,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.label5);
+            this.splitContainer1.Panel2.Controls.Add(this.lblABMUs);
             this.splitContainer1.Panel2.Controls.Add(this.pctUsuarios);
             this.splitContainer1.Panel2.Controls.Add(this.label8);
             this.splitContainer1.Panel2.Controls.Add(this.pctSocios);
@@ -134,15 +134,15 @@
             this.pictureBox5.TabIndex = 0;
             this.pictureBox5.TabStop = false;
             // 
-            // label5
+            // lblABMUs
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(498, 396);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 15);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "ABM usuarios";
+            this.lblABMUs.AutoSize = true;
+            this.lblABMUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblABMUs.Location = new System.Drawing.Point(498, 396);
+            this.lblABMUs.Name = "lblABMUs";
+            this.lblABMUs.Size = new System.Drawing.Size(95, 15);
+            this.lblABMUs.TabIndex = 23;
+            this.lblABMUs.Text = "ABM usuarios";
             // 
             // pctUsuarios
             // 
@@ -194,6 +194,12 @@
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(28, 17);
             this.lblStatus.Text = "BD: ";
+            // 
+            // lblUsuarioTS
+            // 
+            this.lblUsuarioTS.Name = "lblUsuarioTS";
+            this.lblUsuarioTS.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuarioTS.Size = new System.Drawing.Size(0, 17);
             // 
             // label4
             // 
@@ -325,12 +331,6 @@
             this.timerHora.Enabled = true;
             this.timerHora.Tick += new System.EventHandler(this.timerHora_Tick);
             // 
-            // lblUsuarioTS
-            // 
-            this.lblUsuarioTS.Name = "lblUsuarioTS";
-            this.lblUsuarioTS.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblUsuarioTS.Size = new System.Drawing.Size(0, 17);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -387,7 +387,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pctSocios;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblABMUs;
         private System.Windows.Forms.PictureBox pctUsuarios;
         private System.Windows.Forms.ToolStripStatusLabel lblUsuarioTS;
     }

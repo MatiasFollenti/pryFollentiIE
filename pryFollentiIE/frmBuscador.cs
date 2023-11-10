@@ -14,9 +14,13 @@ namespace pryFollentiIE
 {
     public partial class frmBuscador : Form
     {
-        public frmBuscador()
+        string varNombre;
+        string varCategoria;
+        public frmBuscador(string noTenes7L, string jfKennedy)
         {
             InitializeComponent();
+            varNombre = noTenes7L;
+            varCategoria = jfKennedy;
             LlenarTreeView();
             KeyPreview = true;
             this.KeyDown += CerrarFrm_KeyDown;
@@ -155,7 +159,7 @@ namespace pryFollentiIE
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal(varNombre, varCategoria);
             this.Hide();
             frmPrincipal.Show();
         }

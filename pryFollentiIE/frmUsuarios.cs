@@ -12,11 +12,16 @@ namespace pryFollentiIE
 {
     public partial class frmUsuarios : Form
     {
-        public frmUsuarios()
+        string varNombre;
+        string varCategoria;
+        public frmUsuarios(string noTenes7L, string jfKennedy)
         {
             InitializeComponent();
+            varNombre = noTenes7L;
+            varCategoria = jfKennedy;
             KeyPreview = true;
             this.KeyDown += CerrarFrm_KeyDown;
+            varNombre = noTenes7L;
         }
         public static void CerrarFrm_KeyDown(object sender, KeyEventArgs e)
         {
@@ -37,7 +42,7 @@ namespace pryFollentiIE
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmPrincipal = new frmPrincipal();
+            frmPrincipal frmPrincipal = new frmPrincipal(varNombre, varCategoria);
             this.Hide();
             frmPrincipal.Show();
         }

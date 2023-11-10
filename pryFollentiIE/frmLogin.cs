@@ -15,15 +15,17 @@ namespace pryFollentiIE
         
         string varUserIng;
         string varPasswordIng;
-        Usuario objUsuario;
-       
+        AccesoDatos objAccesoDatos;
+        clsLog objLog;
+        DateTime varFecha;
+        string varAccion;
 
         public frmLogin()
         {
             InitializeComponent();
             KeyPreview = true;
             this.KeyDown += CerrarFrm_KeyDown;
-            objUsuario = new Usuario();
+            objAccesoDatos = new AccesoDatos();
         }
 
         public static void CerrarFrm_KeyDown(object sender, KeyEventArgs e)
@@ -58,10 +60,12 @@ namespace pryFollentiIE
         {
             varUserIng = txtUsuario.Text;
             varPasswordIng = txtContraseña.Text;
-            
-            objUsuario.ConectarBD();
-            objUsuario.ValidarUsuario(varUserIng,varPasswordIng,this);
-            
+            varFecha = DateTime.Now;
+            varAccion = "Inicio Sesion";
+            objAccesoDatos.ConectarBD();
+            objAccesoDatos.ValidarUsuario(varUserIng,varPasswordIng,this);
+            objLog = new clsLog();
+            objLog.CargarLog(varUserIng,varFecha,varAccion);
 
         }
 
