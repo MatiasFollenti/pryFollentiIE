@@ -59,6 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsLog.cs" />
+    <Compile Include="EL_CLUBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EL_CLUBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmABMSocios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +159,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="EL_CLUBDataSet.xsc">
+      <DependentUpon>EL_CLUBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EL_CLUBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EL_CLUBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EL_CLUBDataSet.xss">
+      <DependentUpon>EL_CLUBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -230,6 +246,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\equipo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EL_CLUB.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

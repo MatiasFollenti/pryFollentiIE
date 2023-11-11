@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace pryFollentiIE
 {
@@ -14,6 +15,9 @@ namespace pryFollentiIE
     {
         string varNombre;
         string varCategoria;
+        AccesoDatos objBD;
+        string varNombreUs, varContraseña;
+
         public frmUsuarios(string noTenes7L, string jfKennedy)
         {
             InitializeComponent();
@@ -46,5 +50,28 @@ namespace pryFollentiIE
             this.Hide();
             frmPrincipal.Show();
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'eL_CLUBDataSet.USERS' Puede moverla o quitarla según sea necesario.
+            this.uSERSTableAdapter.Fill(this.eL_CLUBDataSet.USERS);
+            objBD = new AccesoDatos();
+            objBD.ConectarBD();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            // Obtener el objeto DataRowView seleccionado
+            DataRowView selectedDataRowView = cmbPerfiles.SelectedItem as DataRowView;
+
+            if (selectedDataRowView != null)
+            {
+                // Acceder al valor de la columna deseada (en este caso, "perfil
+                string valorSeleccionado = selectedDataRowView["perfil"].ToString();
+                varNombreUs = txtNomUs.Text;
+                varContraseña = txtContUs.Text; 
+                objBD.AgregarUsuario(varNombreUs, varContraseña, valorSeleccionado);
+        }
     }
+}
 }

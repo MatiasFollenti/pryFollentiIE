@@ -68,6 +68,8 @@ namespace pryFollentiIE
         {
             varID = Convert.ToInt32(txtIdEstado.Text);
             objBD.ModificarEstado(varID);
+            
+            
         }
     }
 

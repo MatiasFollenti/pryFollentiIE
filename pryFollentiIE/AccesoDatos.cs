@@ -12,13 +12,13 @@ namespace pryFollentiIE
 {
     public class AccesoDatos
     {
-        
+
         OleDbConnection conexionBD;
         OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
         public string varNom;
-        
-        
+
+
         string cadenaDeConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
 
         public string estadoDeConexion = "";
@@ -26,7 +26,7 @@ namespace pryFollentiIE
         int varContador;
         public AccesoDatos()
         {
-             varContador = 0;
+            varContador = 0;
         }
 
 
@@ -47,6 +47,8 @@ namespace pryFollentiIE
         }
         public void traerDatos(DataGridView grilla)
         {
+
+            ConectarBD();
             comandoBD = new OleDbCommand();
 
             comandoBD.Connection = conexionBD;
@@ -71,18 +73,18 @@ namespace pryFollentiIE
             {
                 while (lectorBD.Read())
                 {
-                    datosTabla += "-" + lectorBD[0];
+
                     grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], lectorBD[8]);
                 }
             }
         }
 
 
-        
-        public void ValidarUsuario( string varNombre, string varContraseña, Form frm)
+
+        public void ValidarUsuario(string varNombre, string varContraseña, Form frm)
         {
-            
-         comandoBD = new OleDbCommand();
+
+            comandoBD = new OleDbCommand();
             int intentosMaximos = 3;
             bool usuarioEncontrado = false;
 
@@ -96,7 +98,7 @@ namespace pryFollentiIE
             {
                 string nombreDB = lectorBD[1].ToString();
                 string contraseñaDB = lectorBD[2].ToString();
-                
+
 
                 if (nombreDB == varNombre && contraseñaDB == varContraseña)
                 {
@@ -173,7 +175,7 @@ namespace pryFollentiIE
 
          } */
 
-        public void BuscarPorId(string codigo, DataGridView dgvMostrar )
+        public void BuscarPorId(string codigo, DataGridView dgvMostrar)
         {
             comandoBD = new OleDbCommand();
             //bandera=false;
@@ -207,7 +209,7 @@ namespace pryFollentiIE
 
                     }
                 }
-                
+
                 if (bandera == false)
                 {
 
@@ -218,11 +220,10 @@ namespace pryFollentiIE
             }
         }
 
-        public void ModificarEstado(int id) 
+        public void ModificarEstado(int id)
         {
-            
-            OleDbCommand comandoBD = new OleDbCommand();
 
+            OleDbCommand comandoBD = new OleDbCommand();
             OleDbDataAdapter objda;
             DataSet objds = new DataSet();// objeto DataSetas usar
 
@@ -232,7 +233,7 @@ namespace pryFollentiIE
                 conexionBD.ConnectionString = cadenaDeConexion;
                 conexionBD.Open();
                 estadoDeConexion = "Conectado";
-                // comandoBD.Connection = conexionBD;
+
             }
             catch (Exception ex)
             {
@@ -253,20 +254,20 @@ namespace pryFollentiIE
 
 
             // obtenemos una referencia a la tabla de SOCIOS
-            DataTable dt = objds.Tables["SOCIOS"]; 
+            DataTable dt = objds.Tables["SOCIOS"];
 
             // recorrer los registros de la tabla
 
-            foreach(DataRow registro in dt.Rows) 
+            foreach (DataRow registro in dt.Rows)
             { // buscar el Socio con el ID ingresado por pantalla
-              
-               if((int) registro["CODIGO_SOCIO"] == id) 
+
+                if ((int)registro["CODIGO_SOCIO"] == id)
                 {
-              // establecer el modo de edición del DataRow
-                registro.BeginEdit();
+                    // establecer el modo de edición del DataRow
+                    registro.BeginEdit();
 
                     // asignamos el nuevo valor al estado del socio 
-                    if ((bool)registro["ESTADO"]) 
+                    if ((bool)registro["ESTADO"])
                     {
                         registro["ESTADO"] = false;
                     }
@@ -277,7 +278,7 @@ namespace pryFollentiIE
 
                     // finalizamos el modo edición sobre delDataRow
                     registro.EndEdit();
-                break;// salir del foreach
+                    break;// salir del foreach
                 }
 
 
@@ -290,8 +291,64 @@ namespace pryFollentiIE
             objda.Update(objds, "SOCIOS");
 
             MessageBox.Show("Estado cambiado con éxito!!");
+
+        }
+
+        public void AgregarUsuario(string varNombreUs, string contraseñaUs, string rolUs) 
+        {
+            OleDbCommand comandoBD = new OleDbCommand();
+            OleDbDataAdapter objda;
+            DataSet objds = new DataSet();// objeto DataSetas usar
+
+            try
+            {
+                conexionBD = new OleDbConnection();
+                conexionBD.ConnectionString = cadenaDeConexion;
+                conexionBD.Open();
+                estadoDeConexion = "Conectado";
+
+            }
+            catch (Exception ex)
+            {
+                estadoDeConexion = "Error" + ex.Message;
+            }
+
+            // establecer las propiedades al objeto comando
+            comandoBD.Connection = conexionBD;
+            comandoBD.CommandType = CommandType.TableDirect;
+            comandoBD.CommandText = "USERS";
+
+            // crear el objeto DataAdapter pasando como parámetroel objeto comando que queremos vincular
+            objda = new OleDbDataAdapter(comandoBD);
+
+            // ejecutar la lectura de la tabla y almacenar su contenido en el dataAdapter
+
+            objda.Fill(objds, "USERS");
+
+            // obtenemos una referencia a la tabla de USERS
+            DataTable tabla = objds.Tables["USERS"];
+
+            // creamos el nuevo DataRow con la estructurade campos de la tabla USERS
+
+            DataRow nuevoRegistro = tabla.NewRow();
+
+            // asignamos los valores a todos los campos delDataRow
+             nuevoRegistro["nombreUsuario"] = varNombreUs; 
+             nuevoRegistro["contraseña"] = contraseñaUs ;
+             nuevoRegistro["perfil"] = rolUs;
+
+            // agregamos el DataRow a la tabla USERS
+             tabla.Rows.Add(nuevoRegistro);
+
+            // creamos el objeto OledBCommandBuilder pasando como parámetro el DataAdapter
+            OleDbCommandBuilder cb = new OleDbCommandBuilder(objda);
+            // actualizamos la base con los cambios realizados
+            objda.Update(objds, "USERS");
+
+            MessageBox.Show("Usuario creado con exito");
         }
     }
+
 }
 
 
