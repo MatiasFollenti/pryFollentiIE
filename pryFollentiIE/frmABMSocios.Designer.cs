@@ -60,7 +60,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 34);
+            this.panel1.Size = new System.Drawing.Size(1230, 34);
             this.panel1.TabIndex = 9;
             // 
             // btnMinimizarApp
@@ -68,7 +68,7 @@
             this.btnMinimizarApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.btnMinimizarApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizarApp.Image = global::pryFollentiIE.Properties.Resources.minimizar_ventana;
-            this.btnMinimizarApp.Location = new System.Drawing.Point(1011, 3);
+            this.btnMinimizarApp.Location = new System.Drawing.Point(1152, 7);
             this.btnMinimizarApp.Name = "btnMinimizarApp";
             this.btnMinimizarApp.Size = new System.Drawing.Size(24, 23);
             this.btnMinimizarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -81,7 +81,7 @@
             this.btnCerrarApp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(59)))), ((int)(((byte)(104)))));
             this.btnCerrarApp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrarApp.Image = global::pryFollentiIE.Properties.Resources.cerrar__1_;
-            this.btnCerrarApp.Location = new System.Drawing.Point(1041, 3);
+            this.btnCerrarApp.Location = new System.Drawing.Point(1182, 7);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(30, 24);
             this.btnCerrarApp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -179,14 +179,14 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(226, 34);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(854, 645);
+            this.panel3.Size = new System.Drawing.Size(1004, 645);
             this.panel3.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(789, 624);
+            this.label1.Location = new System.Drawing.Point(941, 624);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 16);
@@ -197,7 +197,7 @@
             // 
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.Image = global::pryFollentiIE.Properties.Resources.volver;
-            this.btnVolver.Location = new System.Drawing.Point(785, 581);
+            this.btnVolver.Location = new System.Drawing.Point(937, 581);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(49, 39);
@@ -214,14 +214,14 @@
             this.dgvMostrar.GridColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgvMostrar.Location = new System.Drawing.Point(0, 0);
             this.dgvMostrar.Name = "dgvMostrar";
-            this.dgvMostrar.Size = new System.Drawing.Size(854, 574);
+            this.dgvMostrar.Size = new System.Drawing.Size(1004, 574);
             this.dgvMostrar.TabIndex = 0;
             // 
             // frmABMSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 679);
+            this.ClientSize = new System.Drawing.Size(1230, 679);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
