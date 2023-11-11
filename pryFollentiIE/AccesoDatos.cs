@@ -17,6 +17,8 @@ namespace pryFollentiIE
         OleDbCommand comandoBD;
         OleDbDataReader lectorBD;
         public string varNom;
+        string varEstado;
+        string varSexo;
 
 
         string cadenaDeConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
@@ -73,8 +75,27 @@ namespace pryFollentiIE
             {
                 while (lectorBD.Read())
                 {
+                    //cargo la grilla con valores de activo/inactivo para que no aparezca true o false
+                    if ((bool)lectorBD[8] == true)
+                    {
+                        varEstado ="Activo";
+                    }
+                    else
+                    {
+                        varEstado = "Inactivo";
+                    }
 
-                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[5], lectorBD[6], lectorBD[7], lectorBD[8]);
+                    //cargo la grilla con valores de Masculino/Femenino para que no aparezca true o false
+                    if ((bool)lectorBD[5] == true)
+                    {
+                        varSexo = "Masculino";
+                    }
+                    else
+                    {
+                        varSexo = "Femenino";
+                    }
+
+                    grilla.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], varSexo, lectorBD[6], lectorBD[7], varEstado);
                 }
             }
         }
