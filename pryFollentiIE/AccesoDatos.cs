@@ -172,9 +172,28 @@ namespace pryFollentiIE
                     {
                         if ((lectorBD[0].ToString()) == codigo) //Si el codigo ingresado por pantalla es igual a la primera posicion del registro
                         {
+                            //cargo la grilla con valores de activo/inactivo para que no aparezca true o false
+                            if ((bool)lectorBD[8] == true)
+                            {
+                                varEstado = "Activo";
+                            }
+                            else
+                            {
+                                varEstado = "Inactivo";
+                            }
+
+                            //cargo la grilla con valores de Masculino/Femenino para que no aparezca true o false
+                            if ((bool)lectorBD[5] == true)
+                            {
+                                varSexo = "Masculino";
+                            }
+                            else
+                            {
+                                varSexo = "Femenino";
+                            }
 
                             dgvMostrar.Rows.Clear();
-                            dgvMostrar.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], lectorBD[6], lectorBD[7], lectorBD[8]);
+                            dgvMostrar.Rows.Add(lectorBD[0], lectorBD[1], lectorBD[2], lectorBD[3], lectorBD[4], varSexo, lectorBD[6], lectorBD[7], varEstado);
                             bandera = true;
                             break;
                         }
