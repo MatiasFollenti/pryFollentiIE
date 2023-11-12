@@ -19,12 +19,9 @@ namespace pryFollentiIE
         public string varNom;
         string varEstado;
         string varSexo;
-
+        public string estadoDeConexion;
 
         string cadenaDeConexion = @"Provider = Microsoft.ACE.OLEDB.12.0;" + " Data Source = ..\\..\\Resources\\EL_CLUB.accdb";
-
-        public string estadoDeConexion = "";
-        public string datosTabla = "";
         int varContador;
         public AccesoDatos()
         {
@@ -43,7 +40,7 @@ namespace pryFollentiIE
             }
             catch (Exception ex)
             {
-                estadoDeConexion = "Error" + ex.Message;
+                estadoDeConexion = ex.Message;
             }
 
         }
@@ -149,53 +146,7 @@ namespace pryFollentiIE
         }
 
 
-        /* public void traerDatosParaLogin(string varNombre, string varContraseña, Form frm)
-         {
-             comandoBD = new OleDbCommand();
-
-
-             comandoBD.Connection = conexionBD;
-             comandoBD.CommandType = System.Data.CommandType.TableDirect;
-             comandoBD.CommandText = "USERS";
-
-             lectorBD = comandoBD.ExecuteReader();
-
-             if (lectorBD.HasRows)
-             {
-
-                 while (lectorBD.Read()) //mientras pueda leer, mostrar (leer)
-                 {
-                     if (lectorBD[1].ToString() == varNombre && lectorBD[2].ToString() == varContraseña)
-                     {
-                         MessageBox.Show("Datos correctos");
-                         frm.Hide();
-                         frmPrincipal frmPrincipal = new frmPrincipal();
-                         frmPrincipal.Show();
-                         varEncontro++;
-                         break;
-                     }
-
-
-                 }
-                 if (varEncontro == 0)
-                 {
-                     varContador++;
-                     MessageBox.Show("Datos de inicio de sesion incorrectos");
-
-
-                 }
-
-                 if (varContador >= 3)
-                 {
-                     MessageBox.Show("Demasiados intentos de inicio de sesion, el sistema se cerrara");
-                     Application.Exit();
-
-                 }
-
-             }
-
-         } */
-
+       
         public void BuscarPorId(string codigo, DataGridView dgvMostrar)
         {
             comandoBD = new OleDbCommand();
@@ -253,12 +204,12 @@ namespace pryFollentiIE
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = cadenaDeConexion;
                 conexionBD.Open();
-                estadoDeConexion = "Conectado";
+                
 
             }
             catch (Exception ex)
             {
-                estadoDeConexion = "Error" + ex.Message;
+                MessageBox.Show("Error" + ex.Message);
             }
 
             // establecer las propiedades al objeto comando
@@ -326,12 +277,12 @@ namespace pryFollentiIE
                 conexionBD = new OleDbConnection();
                 conexionBD.ConnectionString = cadenaDeConexion;
                 conexionBD.Open();
-                estadoDeConexion = "Conectado";
+                
 
             }
             catch (Exception ex)
             {
-                estadoDeConexion = "Error" + ex.Message;
+                MessageBox.Show("Error" + ex.Message); 
             }
 
             // establecer las propiedades al objeto comando

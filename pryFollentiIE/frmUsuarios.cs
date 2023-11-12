@@ -66,12 +66,21 @@ namespace pryFollentiIE
 
             if (selectedDataRowView != null)
             {
-                // Acceder al valor de la columna deseada (en este caso, "perfil
-                string valorSeleccionado = selectedDataRowView["perfil"].ToString();
-                varNombreUs = txtNomUs.Text;
-                varContraseña = txtContUs.Text; 
-                objBD.AgregarUsuario(varNombreUs, varContraseña, valorSeleccionado);
-        }
+                if (varNombreUs != "" && varContraseña != "")
+                {
+                    // Acceder al valor de la columna deseada (en este caso, "perfil
+                    string valorSeleccionado = selectedDataRowView["perfil"].ToString();
+                    varNombreUs = txtNomUs.Text;
+                    varContraseña = txtContUs.Text;
+                    objBD.AgregarUsuario(varNombreUs, varContraseña, valorSeleccionado);
+                }
+                else
+                {
+                    MessageBox.Show("Todos los campos deben ser completados");
+                    txtNomUs.Focus();
+                }
+
+            }
     }
 }
 }
