@@ -63,12 +63,14 @@ namespace pryFollentiIE
             this.Hide();
             frmPrincipal.Show();
         }
-
+        
         private void btnCambiarEstado_Click(object sender, EventArgs e)
         {
             varID = Convert.ToInt32(txtIdEstado.Text);
             objBD.ModificarEstado(varID);
-            
+            dgvMostrar.Columns.Clear();
+            dgvMostrar.Rows.Clear();
+            objBD.traerDatos(dgvMostrar);
             
         }
     }
